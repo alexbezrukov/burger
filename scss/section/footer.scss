@@ -1,0 +1,93 @@
+.footer{
+    background: #000;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    z-index: 999;
+    
+}
+
+.map{
+    height:100%; 
+    position:relative;
+    background: url(../img/map/map.png) no-repeat top center /cover;
+ }
+
+.footer__content{
+    display:flex;
+}
+
+.footer-list{
+    display:flex;
+}
+
+.footer-column{
+    display:flex;
+    flex:1;
+
+    &:nth-child(1){
+        flex-direction:column;
+        justify-content: center;
+    }
+
+    &:nth-child(2){
+        align-items: center;
+        justify-content: flex-end;
+    }
+ }
+
+.footer__item{
+    font-family:'Ubuntu';
+    font-weight:100;
+    color:#fff;
+    @include tablets{
+        font-size:rem(14px);
+    }
+}
+
+.footer__link{
+    font-family:'Ubuntu';
+    font-weight:900;
+    text-decoration:none;
+    color:#c54624;
+    display:block;
+
+    @include tablets{
+        font-size:1rem;
+    }
+}
+
+
+.footer-socials{
+    display:flex;
+    align-items: center;
+}
+
+.footer__icon{
+    fill: #fff;
+    width: rem(25px);
+    height: rem(16px);
+    padding-top:3px;
+}
+
+.footer__icon_phone{
+    fill:#c54624;
+    
+}
+
+.footer__social{
+    margin-right:rem(10px);
+    &:last-child{
+        margin-right:0;
+    }
+}
+
+.footer__social{
+        fill:#5c5c5c;
+    &:hover{
+        fill:#fff;
+    }
+}
+
+
+

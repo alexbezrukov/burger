@@ -1,0 +1,175 @@
+.team{
+    background-image:url(../img/team/team.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+    position:relative;
+}
+
+.container__team{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    width:50%;
+    background:rgba(#2f3234, 0.89);
+    display:flex;
+    flex-direction: column;
+    padding-left:rem(70px);
+    
+    
+    @include tablets{
+        left:0;
+        right:0;
+        bottom:0;
+        top:0;
+        width:100%;
+        padding:0;
+        display:flex;
+        flex-direction:column;
+       
+        align-items: center;
+    }
+}
+
+.title__name_team{
+    padding:rem(90px) 0;
+}
+
+.team-list{
+    max-width: 350px;
+    @include tablets{
+       display:flex;
+       flex-direction:column;
+       justify-content: center;
+       align-items: center;
+       margin:0 auto;
+    }
+    
+}
+
+
+.team-list__item {
+    margin-bottom:rem(5px);
+
+    .team__link{
+        text-decoration:none;
+        font-size:rem(14px);
+        font-family:'Gagalin';
+        color:#fff;
+
+        &:before {
+            content:'';
+            margin-right:rem(10px);
+            display:inline-block;
+            width: 0;
+            height:0;
+            border-left: rem(5px) solid transparent;
+            border-right: rem(5px) solid transparent;
+            border-top: rem(8px) solid $orange;
+            transition: .3s;
+        }       
+
+    }
+
+    .team-item-block{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @include tablets{
+        text-align: center;
+        
+    }
+}
+
+.team-list__item_active{
+    
+    .team-item-block{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        // height:0;
+        // overflow:hidden;
+
+        @include tablets {
+            flex-direction:column;
+            align-items: center;
+            
+        }
+    }
+
+    .team-item-pict{
+        @include tablets{
+            margin:0px;
+        }
+    }
+
+    .team__link{
+        color:$orange; 
+        &:before{
+           transform: rotate(180deg);
+        }
+
+    }
+    
+    @include tablets{
+        text-align:center;
+    }
+}
+
+.team-item-wrap{
+    height:0;
+    overflow:hidden;
+    transition: .5s;
+   
+}
+
+.team-item-block{
+    display:flex;
+    // display:none;
+    // height:0;
+    // overflow:hidden;
+    // transition: .5s;
+
+    @include tablets{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+.team-item-pict{
+    border-radius:50%;
+    overflow: hidden;
+    height:rem(96px);
+    width: rem(96px);
+}
+
+.team-member{
+    display:block;
+    margin-left:-24px;
+}
+
+.team-item-info{
+    // padding:rem(2px) rem(20px);
+    color:#fff;
+    width:210px;
+
+    @include tablets{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items:center;
+    }
+}
+
+.team-info-desc{
+    // width:50%;
+    font-weight:100;
+    font-size:rem(14px);
+    font-family:'Ubuntu';
+
+}
+

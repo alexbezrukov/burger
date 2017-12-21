@@ -1,0 +1,136 @@
+
+// particular wrapper for one-page scroll
+
+.wrapper {
+    width:100%;
+    height:100%;
+    // min-height:100%;
+    position:relative;
+    overflow:hidden;
+    // min-width:940px + 20px // desktop variant
+    min-height:rem(650px);
+}
+
+.maincontent{
+    height:100%;
+    transition:1s;
+    will-change:transform;
+    min-height: rem(650px);
+    transform: translateZ(0);
+}
+
+
+// section in all screens
+
+.section {
+    height:100vh;
+    min-height:rem(650px);
+    position:relative;
+    display:flex;
+    overflow:hidden;
+    background-color: rgba(#000,.31);
+}
+
+
+// container in all screens
+
+.container{
+    // width:940px;
+    
+    width:95%;
+    max-width:rem(940px);
+    margin:0 auto;
+    position:relative;
+   
+}
+
+
+// title__name
+
+ .title__name{
+     font-family:'Gagalin';
+     font-size:rem(72px);
+     color:#2f3234;
+     @include tablets{
+         font-size:rem(48px);
+     }
+     @include phones{
+         font-size:rem(39px);
+     }
+ }
+
+ .title__name_orange{
+     color:$orange;
+ }
+
+ .title__name_white{
+     color:#fff;
+     position:absolute;
+     top:110px;
+     left:95px;
+ }
+
+
+//button 
+
+.top__button__link{
+    min-width:rem(98px);
+    color:#fff;
+    text-transform: uppercase;
+    background: $red;
+    font-family: 'Ubuntu';
+    font-size:13px;
+    font-weight:400;
+    padding:14px 17px;
+    border-radius:5px;
+    outline:none;
+    border:none;
+    &:hover{
+        background-color: darken($red, 7%); 
+        cursor:pointer;
+    }
+    @include laptops{
+        margin-right:20px;
+    }
+}
+
+.arrow-icon {
+    fill: #fff;
+    display: inline-block;
+    width: 1.875rem;
+    height: 1.875rem;
+    transition: .3s;
+}
+
+.onepage-pagination {
+    position: absolute;
+    right: 50px;
+    top: 20%;
+    z-index: 5;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.onepage-pagination li a:before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(252, 252, 252, 0.85);
+    border-radius: 10px;
+}   
+
+.onepage-pagination li a.active:before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(252, 252, 252, 0.85);
+    border-radius: 10px;
+    border:none;
+    margin-top:0;
+    left:10px;
+}
+
+

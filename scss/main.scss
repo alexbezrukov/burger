@@ -1,0 +1,43 @@
+// variables
+
+$red:#E45028;
+$orange: #f8b43a;
+$green: #8ac03e;
+$dark: #2f3234;
+$black:#6a6969;
+
+// resolutions
+
+$laptops:991px; // laptops resolution
+$tablets:768px; // tablets resolution
+$phones:480px; // phones resolution
+
+//media
+
+@import "responsive/media"; // media
+
+// config 
+
+@import "config/variables"; // variables 
+@import "config/mixins";  // mixins
+
+// layout
+
+@import "layout/fonts"; // fonts
+@import "layout/base"; // specification
+@import "layout/adjustment"; // layout base adjustments 
+
+//section
+
+@import "section/header"; // header 
+@import "section/best"; // best section
+@import "section/burgers"; // burgers section
+@import "section/team"; // team
+@import "section/menu"; // menu
+@import "section/reviews"; // reviews
+@import "section/order"; // order
+@import "section/map"; // location
+@import "section/footer"; // location
+@import "section/icons"; // location
+
+

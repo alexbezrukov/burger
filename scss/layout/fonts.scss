@@ -1,0 +1,80 @@
+/* Ubuntu Font Light */
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/Light/Ubuntu-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Ubuntu/Light/Ubuntu-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Ubuntu/Light/Ubuntu-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Ubuntu/Light/Ubuntu-Light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Ubuntu/Light/Ubuntu-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Ubuntu/Light/Ubuntu-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight:100;
+    font-style:normal;     
+  }
+
+/* Ubuntu Font Medium */
+
+  @font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/Medium/Ubuntu-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Ubuntu/Medium/Ubuntu-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Ubuntu/Medium/Ubuntu-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Ubuntu/Medium/Ubuntu-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Ubuntu/Medium/Ubuntu-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Ubuntu/Medium/Ubuntu-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight:400;
+    font-style:normal;     
+  }
+
+/* Ubuntu Font Bold */
+
+  @font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/Bold/Ubuntu-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Ubuntu/Bold/Ubuntu-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Ubuntu/Bold/Ubuntu-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Ubuntu/Bold/Ubuntu-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Ubuntu/Bold/Ubuntu-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Ubuntu/Bold/Ubuntu-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight:900;
+    font-style:normal;     
+  }
+
+  /*Gagalin Font Regular */
+  @font-face {
+    font-family: 'Gagalin';
+    src: url('../fonts/Gagalin/Regular/Gagalin.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Gagalin/Regular/Gagalin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Gagalin/Regular/Gagalin.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Gagalin/Regular/Gagalin.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Gagalin/Regular/Gagalin.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Gagalin/Regular/Gagalin.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight:400;
+    font-style:normal;     
+  }
+
+  /*Lifehack Font Medium */
+  @font-face {
+    font-family: 'Lifehack';
+    src: url('../fonts/Lifehack/Medium/Lifehack-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lifehack/Medium/Lifehack-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Lifehack/Medium/Lifehack-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Lifehack/Medium/Lifehack-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Lifehack/Medium/Lifehack-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Lifehack/Medium/Lifehack-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight:900;
+    font-style:normal;     
+  }
+
+  /* Font Awesome */
+  @font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/Font Awesome/FontAwesome.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Font Awesome/FontAwesome.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Font Awesome/FontAwesome.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Font Awesome/FontAwesome.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Font Awesome/FontAwesome.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Font Awesome/FontAwesome.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight:400;
+    font-style:normal;     
+  }

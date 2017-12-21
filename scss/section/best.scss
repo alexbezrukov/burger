@@ -1,0 +1,111 @@
+.best {
+    background-image:url(../img/best/best.png); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 20%;
+    display:flex;
+    align-items:center;
+
+}
+
+.container__best{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.title__name_best{
+
+    padding:80px 0;
+
+    @include phones{
+        margin:20px 0 0;
+        padding:0;
+    }
+}
+
+
+.best-triggers{
+
+    display:flex;
+
+    @include phones{
+    flex-direction:column;    
+    
+    }
+        
+    
+    .best-icon{
+      height:rem(90px);
+      width:90%;
+    }
+
+    .icon_meat{
+        fill:#e25028;
+    }
+    .icon_hand{
+        fill:#f8b43a;
+    }
+    .icon_natural{
+        fill:#8ac03e;
+    }
+}
+
+.best-triggers__item{
+
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    flex:1;
+
+     @include phones{
+        display:flex;
+        flex-direction:row;
+    }
+
+}
+
+.best-trigger__pict {
+    @include phones{
+        flex:1;
+        margin-right:10px;
+    }
+}
+
+.best-trigger__desc {
+    @include phones{
+        flex:2;
+    }
+}
+
+.best__trigger__name{
+    display: block;
+    font-family: 'Lifehack';
+    font-size:rem(24px);
+    text-transform: inherit;
+    text-align:center;
+    line-height:1.0;
+    margin-top:rem(35px);
+    margin-bottom:10px;
+
+    @include phones{
+        text-align:left;
+        margin-bottom:10px;
+    }
+}
+
+.best__trigger__info{
+    font-family:'Ubuntu';
+    font-weight:100;
+    text-align: center;
+    font-size:rem(14px);
+    line-height: 1.8;
+
+    @include phones {
+         text-align:left;
+         line-height:1.6;
+    }
+}
+
