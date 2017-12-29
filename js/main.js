@@ -212,6 +212,7 @@ $(function(){
     })    
 })
 
+
 // burgers slider
 
 $(document).ready(function(){
@@ -229,63 +230,6 @@ $(document).ready(function(){
         prevArrow: '<a href="#" class="reviews__arrows reviews__arrows-prev"><svg class="arrow-icon"> <use xlink:href="../img/sprite/sprite.svg#arrow-scroll" /></svg></a>',
         nextArrow: '<a href="#" class="reviews__arrows reviews__arrows-next"><svg class="arrow-icon"> <use xlink:href="../img/sprite/sprite.svg#arrow-scroll" /></svg></a>'
     });
-});
-
-
-//one-page scroll
-
-$(document).ready(function(){
-
-    const display = $('.maincontent');
-    const sections = $('.sections');
-
-    let inScroll = false;
-
-    const switchMenuActiveClass = sectionEq => {
-        $('.circle__item').eq(sectionEq).addClass('active')
-        .siblings().removeClass('active');
-    }  
-
-    const performTransition = sectionEq =>{
-        
-
-        if (inScroll) return
-        inScroll = true
-        
-        const position = (sectionEq * -100 ) + '%';
-        
-        display.css({
-            'transform' : 'translate(0, ${position})',
-            '-webkit-transform' : 'translate(0, ${position})',
-        })
-
-        sections.eq(sectionEq).addClass('active')
-            .siblings().removeClass('active');
-
-            setTimeout(() => {
-                inScroll = false;
-                switchMenuActiveClass(sectionEq);
-            }, 1300); 
-    }    
-
-    $('.wrapper').on('wheel', e => {
-        const deltaY = e.originalEvent.deltaY;
-        const activeSection = sections.filter('.active');
-        const nextSection = activeSection.next();
-        const prevSection = activeSection.prev();
-        
-        if (deltaY > 0 && nextSection.length) {// скроллим вниз
-        performTransition(nextSection.index())
-        }
-        
-        if (deltaY < 0 && prevSection.length) { //скроллим вверх
-            performTransition(prevSection.index())
-        }
-    });
-});    
-
-$(document).on('keydown', e => {
-    console.log(keyCode);
 });
 
 
@@ -325,157 +269,144 @@ $(document).on('keydown', e => {
 
             }
 
-    });      
-     
-
-//========== one page scroll 
-
-// const display = ('.maincontent');
-// const sections = ('.section');
-// const activeSection = sections.filter('.active');
-// const nextSection = activeSection.next();
-
-// let inscroll = false;
-
-// const performTransition = sectionEq => {
-//     if (inscroll) return
-//     inscroll = true
-    
-//     const position = (sectionEq * -100) + '%';
-
-//     display.css({
-//         'transform' : 'translate(0, ${position})',
-//         '-webkit-transform' : 'translate(0, ${position})',
-//     })
-
-//     sections.eq(sectionEq).addClass('active')
-//     .siblings().removeClass('active');
+    });       
 
 
-//     setTimeout(() => {
-//         inscroll = false;
+// onepage-scroll
 
-//     }, 1300);
-// }
+$(function() {
 
-// $('.wrapper').on('wheel', e => {
-//     const deltaY = e.originalEvent.deltaY;
+    const display = $('.maincontent');
+    const sections = $('.section');
 
-//     if (deltaY > 0 && nextSection.length) { //скролим вНиз
-//         performTransition(nextSection.index())
-//     } 
+    let inScroll = false;
+    let mobileDetect = new MobileDetect(window.navigator.userAgent);
+    const isMobile = mobileDetect.mobile();
 
-//     if (deltaY < 0 && prevSection.length) { // скролим вверх
-//         performTransition(prevSection.index())
-//     }
-// });
-
-//==========================================================
-
-// one-page scroll 
-
-const display = $('.maincontent');
-const sections = $('.section');
-
-let inScroll = false;
-
-const mobileDetect = new MobileDetect(window.navigator.userAgent);
-const isMobile = mobileDetect.mobile();
-
-const switchMenuActiveClass = sectionEq => {
-  $('.circle__item').eq(sectionEq).addClass('active')
-    .siblings().removeClass('active');
-}
-
-const performTransition = sectionEq => {
-  if (inScroll) return
-  inScroll = true
-
-  const position = (sectionEq * -100) + '%';
-
-  display.css({
-    'transform': `translate(0, ${position})`,
-    '-webkit-transform': `translate(0, ${position})`
-  })
-
-  sections.eq(sectionEq).addClass('active')
-    .siblings().removeClass('active');
-
-  setTimeout(() => {
-    inScroll = false;
-    switchMenuActiveClass(sectionEq);
-  }, 1300);
-}
-
-const difineSections = sections => {
-  const activeSection = sections.filter('.active');
-  return {
-    activeSection: activeSection,
-    nextSection: activeSection.next(),
-    prevSection: activeSection.prev()
-  }
-}
-
-const scrollToSection = direction => {
-  const section = difineSections(sections)
-
-  if (inScroll) return;
-
-  if (direction === 'up' && section.nextSection.length) { // вниз
-    performTransition(section.nextSection.index())
-  }
-
-  if (direction === 'down' && section.prevSection.length) { // вверх
-    performTransition(section.prevSection.index())
-  }
-}
-
-$('.wrapper').on({
-  wheel: e => {
-    const deltaY = e.originalEvent.deltaY;
-    let direction = (deltaY > 0) 
-      ? 'up' 
-      : 'down'
-
-    scrollToSection(direction);
-  },
-  touchmove: e => (e.preventDefault())
-});
-
-
-$(document).on('keydown', e => {
-  const section = difineSections(sections);
-
-  if (inScroll) return
-
-  switch (e.keyCode) {
-    case 40: // вверх
-      if (!section.nextSection.length) return;
-      performTransition(section.nextSection.index());
-      break;
-
-    case 38: //вниз
-      if (!section.prevSection.length) return;
-      performTransition(section.prevSection.index());
-      break;
-  }
-});
-
-if (isMobile) {
-  $(window).swipe({
-    swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-      console.log(direction);
-      scrollToSection(direction);
+    const switchMenuActiveClass = sectionEq => {
+        $('.circle__item').eq(sectionEq).addClass('active')
+          .siblings().removeClass('active');
     }
-  })
-}
 
+    // ф-ция для скролла к нужной секции
+    const performTransition = sectionEq => {
+        
+        if (!inScroll) {
+            inScroll = true;
+            const position = (sectionEq * -100) + '%';
 
-$('[data-scroll-to]').on('click touchstart', e => {
-  e.preventDefault();
-  const $this = $(e.currentTarget);
-  const sectionIndex = parseInt($this.attr('data-scroll-to'));
+            display.css({
+                'transform' : `translate(0, ${position})`,
+                '-webkit-transform' : `translate(0, ${position})`
+            })
+    
+            sections.eq(sectionEq).addClass('active')
+              .siblings().removeClass('active');
 
-  performTransition(sectionIndex);
-  
+            switchMenuActiveClass(sectionEq);
+
+            setTimeout(() => {
+                inScroll = false; 
+            }, 1300);
+        }
+   
+    }
+
+    const defineSections = sections => {
+        
+        const activeSection = sections.filter('.active');
+
+        return {
+            activeSection : activeSection,
+            nextSection   : activeSection.next(),
+            prevSection   : activeSection.prev()
+        }
+
+    }
+
+    const scrollToSection = direction => {
+
+        const section = defineSections(sections);
+
+        if (!inScroll) {
+            
+            if (direction == 'up' && section.nextSection.length) {
+                performTransition(section.nextSection.index());
+            }
+
+            if (direction == 'down' && section.prevSection.length) {
+                performTransition(section.prevSection.index());
+            }
+        }
+
+    }
+    
+    $('.wrapper').on({
+
+        wheel: e => {
+            
+            const deltaY = e.originalEvent.deltaY;
+            let direction = (deltaY > 0)
+                ? 'up'
+                : 'down';
+            
+            scrollToSection(direction);
+    
+            
+
+        },
+        touchmove: e => (e.preventDefault())
+        
+    });
+
+    $(document).on('keydown', e => {
+
+        const section = defineSections(sections);
+
+        if (!inScroll) {
+
+            switch (e.keyCode) {
+                case 40: // скролл до след секции
+                    if (section.nextSection.length) {
+                        performTransition(section.nextSection.index());
+                    }
+                    break;
+                case 38: // скролл до пред секции
+                    if (section.prevSection.length) {
+                        performTransition(section.prevSection.index());
+                    }
+                    break;
+            }
+        }
+
+    });
+
+    if (isMobile) {
+        $(window).swipe({
+
+            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                scrollToSection(direction);
+            }
+
+        })
+    }
+
+    $('[data-scroll-to]').on('click touchstart', e => {
+        e.preventDefault();
+
+        const $this = $(e.currentTarget);
+        const sectionIndex = parseInt($this.attr('data-scroll-to'));
+
+        const hamburgerIcon = $('.top-hamburger');
+        const hamburgerMenu = $('.top-menu_hamburger');
+
+        performTransition(sectionIndex);
+
+        hamburgerIcon.removeClass('top-menu_hamburger_active');
+        hamburgerMenu.removeClass('top-menu_hamburger_active');
+
+    });
+
 });
+
+

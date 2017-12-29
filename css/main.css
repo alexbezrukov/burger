@@ -123,6 +123,9 @@ table {
   position: relative;
   overflow: hidden;
   min-height: 40.625rem; }
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      min-height: auto; } }
 
 .maincontent {
   height: 100%;
@@ -133,9 +136,12 @@ table {
   min-height: 40.625rem;
   -webkit-transform: translateZ(0);
   transform: translateZ(0); }
+  @media screen and (max-width: 768px) {
+    .maincontent {
+      min-height: auto; } }
 
 .section {
-  height: 100vh;
+  height: 100%;
   min-height: 40.625rem;
   position: relative;
   display: -webkit-box;

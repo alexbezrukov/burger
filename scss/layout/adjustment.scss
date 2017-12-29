@@ -9,6 +9,10 @@
     overflow:hidden;
     // min-width:940px + 20px // desktop variant
     min-height:rem(650px);
+
+    @include tablets{
+        min-height: auto;
+    }
 }
 
 .maincontent{
@@ -17,13 +21,17 @@
     will-change:transform;
     min-height: rem(650px);
     transform: translateZ(0);
+
+    @include tablets{
+        min-height: auto;
+    }
 }
 
 
 // section in all screens
 
 .section {
-    height:100vh;
+    height:100%;
     min-height:rem(650px);
     position:relative;
     display:flex;
